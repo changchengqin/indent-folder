@@ -1,51 +1,19 @@
 <idea-plugin>
-  <id>com.github.ArtsiomCh.CommentFolder</id>
+  <id>com.github.changchengqin.IdentationFolder</id>
   <name>CommentFolder</name>
-  <version>0.1.3</version>
-  <vendor email="achapialiou@gmail.com" url="http://github.com/ArtsiomCh/CommentFolder">Artsiom Chapialiou</vendor>
+  <version>0.1.0</version>
+  <vendor email="qinyeliang@gmail.com" url="http://github.com/ArtsiomCh/CommentFolder">Artsiom Chapialiou</vendor>
 
   <description><![CDATA[
-      Enable folding everywhere (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-212623">IDEA-212623</a>) for multi-line comments block (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-106702">IDEA-106702</a>) :<br>
-<pre>
-/* multi
-   line
-   comments
-   block
-*/</pre> <br>
-      Enable folding for multi-line array initializer block:<br>
-<pre>
-    int[] array = {
-            0,
-            1,
-            2,
-            3};
-</pre> <br>
-      Enable folding for multi-line String:<br>
-<pre>
-    String str =
-            "multi"
-            + "line "
-            + "String";
-</pre> <br>
-      Enable folding for multi-line arguments list (functions, etc.):<br>
-<pre>
-    Collections.addAll(
-        collection,
-        "contains",
-        ...
-        "version_compare");
-</pre> <br>
+      Enable folding by identation (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-106702">IDEA-106702</a>)<br>
     ]]></description>
 
   <change-notes><![CDATA[
-      0.1.3 - Enable folding for multi-line arguments list (functions, etc.). <br>
-      0.1.2 - Enable folding for multi-line array initializer blocks and multi-line Strings. <br>
-      0.1.1 - Enable folding everywhere for multi-line comments block (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-212623">IDEA-212623</a>) <br>
-      0.1.0 - Initial release: Enable folding for multi-line comments block (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-106702">IDEA-106702</a>)
+      0.1.0 - Initial release: Enable folding by identation (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-320234">IDEA-320234</a>)
     ]]></change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0" until-build="193.*"/>
+  <idea-version since-build="173.0" until-build="241.*"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -56,7 +24,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-    <lang.foldingBuilder language="JAVA" implementationClass="com.github.artsiomch.commentfolder.BlockCommentFoldingBuilder"/>
+    <lang.foldingBuilder language="JAVA" implementationClass="com.github.changchengqin.indentationfolder.IndentationFoldingBuilder"/>
+
   </extensions>
 
   <actions>

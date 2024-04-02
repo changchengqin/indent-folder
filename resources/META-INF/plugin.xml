@@ -2,7 +2,7 @@
   <id>com.github.changchengqin.IdentationFolder</id>
   <name>CommentFolder</name>
   <version>0.1.0</version>
-  <vendor email="qinyeliang@gmail.com" url="http://github.com/ArtsiomCh/CommentFolder">Artsiom Chapialiou</vendor>
+  <vendor email="qinyeliang@gmail.com" url="https://github.com/changchengqin/indent-folder">changchengqin</vendor>
 
   <description><![CDATA[
       Enable folding by identation (fix <a href="https://youtrack.jetbrains.com/issue/IDEA-106702">IDEA-106702</a>)<br>

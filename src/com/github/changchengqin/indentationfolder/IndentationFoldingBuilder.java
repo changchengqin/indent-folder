@@ -21,9 +21,7 @@ import java.util.*;
  * #use indentation-based folding strategy#
  */
 public class IndentationFoldingBuilder implements FoldingBuilder {
-    private static final Logger logger = Logger.getInstance(IndentationFoldingBuilder.class);
     int tabSize = 4;
-    @NotNull
     @Override
     public FoldingDescriptor[] buildFoldRegions(@NotNull ASTNode node, @NotNull Document document) {
 
@@ -75,7 +73,7 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
 
         if (indentationStartLineNumber == -1) {
             TextRange bodyTextRange = body.getTextRange();
-            indentationStartLineNumber = document.getLineNumber(bodyTextRange.getStartOffset()) + 1;;
+            indentationStartLineNumber = document.getLineNumber(bodyTextRange.getStartOffset()) + 1;
             indentationEndLineNumber = document.getLineNumber(bodyTextRange.getEndOffset()) ;
         }
 
@@ -125,7 +123,7 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
     private  int findEndLineNumber(int startIndex, List<LineIndent> indentLevels, LineIndent currentIndent,Document document,PsiCodeBlock body,List<Integer> emptyLines) {
         for (int j = startIndex; j < indentLevels.size() - 1; j++) {
             LineIndent endlineIndent= indentLevels.get(j);
-            if (endlineIndent.indentLevel == currentIndent.indentLevel) {
+            if (endlineIndent.indentLevel.equals(currentIndent.indentLevel)) {
                 if(isExcludeLine(endlineIndent.lineNumber,document.getLineStartOffset(endlineIndent.lineNumber),body,emptyLines)){
                     continue;
                 }
@@ -143,11 +141,7 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
         }
 
         // exclude blank line
-        if(emptyLines.contains(lineNumber)) {
-            return true;
-        }
-
-        return false;
+        return emptyLines.contains(lineNumber);
     }
 
     public static String getLeadingSpaces(String input) {

@@ -9,13 +9,26 @@ Enable folding by identation,fix <a href="https://youtrack.jetbrains.com/issue/I
 2. Open your IntelliJ Platform IDE, navigate to `Settings -> Plugins`, and install the plugin using `Install Plugin From Disk...`
 3. In class-level comments, mark the current class for enabling this plugin with the following keywords:
     ```java
-    use indentation-based folding strategy
+    package com.github.changchengqin.indentationfolder;
+    
+    import java.util.*;
+    
+    /**
+     * use indentation-based folding strategy
+     */
+    public class IndentationFoldingBuilder implements FoldingBuilder {
+    
+    }
     ```
 4. Additionally, within methods, you can specify the scope of code to be affected by this plugin using two single-line comments.
     ```java
-    // indentation-based folding start
-      other code...
-    // indentation-based folding end
+    private void methodName() {
+        
+        // indentation-based folding start
+          code...
+        // indentation-based folding end
+    
+    }
     ```
 5. example
    

@@ -3,7 +3,6 @@ package com.github.changchengqin.indentationfolder;
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.folding.FoldingBuilder;
 import com.intellij.lang.folding.FoldingDescriptor;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
@@ -15,9 +14,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * 1. 首先判断类注释中有没有#use indentation-based folding strategy#,如果没有，就不对当前文件进行处理
- * 3. 找到每个方法中htmlflow start 和 htmlflow end单行注释所在行号，如果找不到这两个单行注释，就计算每个方法内容的首尾行号
- * 4. 根据首尾行号进行IndentationFold处理
  * #use indentation-based folding strategy#
  */
 public class IndentationFoldingBuilder implements FoldingBuilder {

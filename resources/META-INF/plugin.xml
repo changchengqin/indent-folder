@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>com.github.changchengqin.IdentationFolder</id>
-  <name>CommentFolder</name>
+  <name>IndentFolder</name>
   <version>0.1.0</version>
   <vendor email="qinyeliang@gmail.com" url="https://github.com/changchengqin/indent-folder">changchengqin</vendor>
 

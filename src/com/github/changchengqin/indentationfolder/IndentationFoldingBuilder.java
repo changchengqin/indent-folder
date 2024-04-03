@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 /**
- * #use indentation-based folding strategy#
+ * use indentation-based folding strategy
  */
 public class IndentationFoldingBuilder implements FoldingBuilder {
     int tabSize = 4;
@@ -106,7 +106,7 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
                 if (endLineNumber > -1) {
                     FoldingDescriptor namedFoldingDescriptor = new FoldingDescriptor(
                             psiMethod.getNode(),
-                            new TextRange(startOffset + currentIndent.indentLevel * 4, document.getLineEndOffset(endLineNumber)),
+                            new TextRange(startOffset, document.getLineEndOffset(endLineNumber)),
                             null,
                             getPlaceholderText(document, currentIndent.lineNumber)
                     );
@@ -169,18 +169,7 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
 
     public String getPlaceholderText(Document document, int lineNumber) {
         String lineText = document.getText(new TextRange(document.getLineStartOffset(lineNumber), document.getLineEndOffset(lineNumber)));
-            String[] lineTextSplitByDot = lineText.stripLeading().split("\\.");
-        System.out.println("hello");
-
-        if (lineTextSplitByDot.length > 1) {
-            return "." + lineTextSplitByDot[1] + "...";
-        }
-        if (lineText.stripLeading().length() > 5) {
-            return lineText.stripLeading().substring(0, 5) + "...";
-        } else {
-            return lineText.stripLeading() + "...";
-        }
-
+        return lineText + "...";
     }
 
     @Nullable

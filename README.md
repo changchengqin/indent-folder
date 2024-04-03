@@ -30,6 +30,6 @@ Enable folding by identation,fix <a href="https://youtrack.jetbrains.com/issue/I
     
     }
     ```
-5. example
+## Example
    
    ![image](https://github.com/changchengqin/indent-folder/assets/3336443/2b24330e-1407-4a44-a3ab-ed990eb7a6ce)

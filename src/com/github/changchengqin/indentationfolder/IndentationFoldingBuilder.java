@@ -41,6 +41,9 @@ public class IndentationFoldingBuilder implements FoldingBuilder {
         Collection<PsiMethod> methods = PsiTreeUtil.findChildrenOfType(node.getPsi(), PsiMethod.class);
 
         for (PsiMethod method : methods) {
+            if(method.getBody() == null) {
+                continue;
+            }
             processMethod(method, descriptors, document);
         }
         return descriptors.toArray(new FoldingDescriptor[0]);
